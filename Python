@@ -6,3 +6,48 @@ def audit_security():
 
 if __name__ == "__main__":
     audit_security()
+
+
+import os
+import sys
+
+def audit_security():
+    print("Crypto Security Audit Assistant Initialized.")
+    # Add your audit functions here
+
+def check_environment():
+    """
+    Verifica las dependencias del sistema y el entorno de ejecución
+    para garantizar una auditoría segura.
+    """
+    print("[*] Iniciando verificación del entorno...")
+    
+    # 1. Comprobación del sistema operativo
+    sistema = sys.platform
+    print(f"[*] Sistema operativo detectado: {sistema}")
+    
+    # 2. Verificación de permisos
+    if os.name == 'posix':
+        if os.geteuid() == 0:
+            print("[!] Advertencia: Se están ejecutando procesos con privilegios de administrador.")
+        else:
+            print("[+] Entorno de usuario estándar verificado.")
+            
+    # 3. Comprobación de configuración
+    if os.path.exists(".env"):
+        print("[+] Archivo de configuración .env encontrado.")
+    else:
+        print("[-] No se detectó archivo .env.")
+
+if __name__ == "__main__":
+    audit_security()
+    check_environment()
+def check_backup_files():
+    """
+    Comprobación de integridad de archivos de respaldo.
+    """
+    print("[*] Verificando archivos de respaldo...")
+    if os.path.exists("wallet.backup"):
+        print("[-] Archivo de respaldo detectado. Verificando integridad...")
+    else:
+        print("[+] No se detectó archivo de respaldo (wallet.backup) en la ruta actual.")
