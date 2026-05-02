@@ -1,0 +1,13 @@
+# main.py - Script principal de auditoría y respaldo
+import os
+
+def main():
+    print("Asistente de Auditoría de Criptoseguridad iniciado.")
+    # Agrega aquí la lógica para verificar tus copias de seguridad
+    if os.path.exists('wallet.dat'):
+        print("Archivo de cartera detectado. Listo para validación.")
+    else:
+        print("Entorno verificado. Ningún archivo crítico expuesto en el directorio.")
+
+if __name__ == "__main__":
+    main()
