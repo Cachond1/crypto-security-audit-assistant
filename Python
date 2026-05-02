@@ -51,3 +51,7 @@ def check_backup_files():
         print("[-] Archivo de respaldo detectado. Verificando integridad...")
     else:
         print("[+] No se detectó archivo de respaldo (wallet.backup) en la ruta actual.")
+if __name__ == "__main__":
+    audit_security()
+    check_environment()
+    check_backup_files()
