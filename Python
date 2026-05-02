@@ -42,4 +42,4 @@ def check_backup_files():
 if __name__ == "__main__":
     audit_security()
     check_environment()
-    check_backup_files()
+    check_backup_files() 
