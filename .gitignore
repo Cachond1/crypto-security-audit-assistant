@@ -1,0 +1,9 @@
+# Archivos de entorno y configuración
+__pycache__/
+*.pyc
+.env
+
+# Respaldo de carteras y logs
+*.log
+*.dat
+wallet.backup
