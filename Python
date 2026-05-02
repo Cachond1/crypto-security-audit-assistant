@@ -43,3 +43,24 @@ if __name__ == "__main__":
     audit_security()
     check_environment()
     check_backup_files() 
+def validar_direccion_bitcoin(direccion):
+    """
+    Valida si una dirección de Bitcoin tiene una longitud y caracteres válidos.
+    """
+    # Longitudes válidas y caracteres permitidos
+    caracteres_validos = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+    
+    if not (26 <= len(direccion) <= 35) and not (len(direccion) == 42 or len(direccion) == 62):
+        return False, "La longitud de la dirección no es válida."
+        
+    for char in direccion:
+        if char not in caracteres_validos:
+            return False, "La dirección contiene caracteres no válidos."
+            
+    return True, "La dirección tiene un formato válido."
+
+# Prueba rápida de la función
+if __name__ == "__main__":
+    direccion_ejemplo = "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+    es_valida, mensaje = validar_direccion_bitcoin(direccion_ejemplo)
+    print(f"Resultado de la validación: {mensaje}")
