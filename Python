@@ -3,6 +3,7 @@ import sys
 
 def audit_security():
     print("Crypto Security Audit Assistant Initialized.")
+    # Add your audit functions here
 
 def check_environment():
     """
@@ -26,7 +27,7 @@ def check_environment():
     if os.path.exists(".env"):
         print("[+] Archivo de configuración .env encontrado.")
     else:
-        print("[-] No se detectó archivo .env")
+        print("[-] No se detectó archivo .env.")
 
 def check_backup_files():
     """
